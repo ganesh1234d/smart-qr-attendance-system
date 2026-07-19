@@ -23,7 +23,11 @@ FRONTEND_DIR = BASE_DIR / "frontend"
 
 app.mount("/css", StaticFiles(directory=FRONTEND_DIR / "css"), name="css")
 app.mount("/js", StaticFiles(directory=FRONTEND_DIR / "js"), name="js")
-app.mount("/images", StaticFiles(directory=FRONTEND_DIR / "images"), name="images")
+images_dir = FRONTEND_DIR / "images"
+if not images_dir.exists():
+    images_dir.mkdir(parents=True, exist_ok=True)
+
+app.mount("/images", StaticFiles(directory=images_dir), name="images")
 
 
 
