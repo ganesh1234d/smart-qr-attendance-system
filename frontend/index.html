@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart QR Attendance</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+
+            background:#f4f6f9;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            height:100vh;
+
+        }
+
+        .container{
+
+            width:420px;
+
+            background:white;
+
+            padding:40px;
+
+            border-radius:12px;
+
+            box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+            text-align:center;
+
+        }
+
+        h1{
+
+            color:#2c3e50;
+
+            margin-bottom:10px;
+
+        }
+
+        h2{
+
+            color:#666;
+
+            margin-bottom:40px;
+
+            font-size:20px;
+
+        }
+
+        .btn{
+
+            width:100%;
+
+            padding:15px;
+
+            margin:12px 0;
+
+            border:none;
+
+            border-radius:8px;
+
+            font-size:18px;
+
+            cursor:pointer;
+
+            transition:.3s;
+
+        }
+
+        .student{
+
+            background:#3498db;
+
+            color:white;
+
+        }
+
+        .student:hover{
+
+            background:#2980b9;
+
+        }
+
+        .admin{
+
+            background:#27ae60;
+
+            color:white;
+
+        }
+
+        .admin:hover{
+
+            background:#1f8a4d;
+
+        }
+
+        p{
+
+            margin-top:30px;
+
+            color:#888;
+
+            font-size:14px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>SMART QR ATTENDANCE</h1>
+
+    <h2>Choose Login Type</h2>
+
+    <button
+        class="btn student"
+        onclick="studentLogin()">
+
+        👨‍🎓 Student Login
+
+    </button>
+
+    <button
+        class="btn admin"
+        onclick="adminLogin()">
+
+        👨‍💼 Admin Login
+
+    </button>
+
+    <p>
+
+        QR & GPS Based Smart Attendance System
+
+    </p>
+
+</div>
+
+<script>
+
+function studentLogin(){
+
+    window.location.href="/login";
+
+}
+
+function adminLogin(){
+
+    window.location.href="/login?role=admin";
+
+}
+
+</script>
+
+</body>
+
+</html>

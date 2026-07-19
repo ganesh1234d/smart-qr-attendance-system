@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Smart QR Attendance</h1>
+
+        <h2>Student Registration</h2>
+
+        <form id="registerForm">
+
+            <input
+                type="text"
+                id="full_name"
+                placeholder="Full Name"
+                required>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                required>
+
+            <input
+                type="text"
+                id="batch_no"
+                placeholder="Batch No"
+                required>
+
+            
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required>
+
+            <button type="submit">
+
+                Register
+
+            </button>
+
+        </form>
+
+        <p>
+
+            Already Registered?
+
+            <a href="/login">
+
+                Login Here
+
+            </a>
+
+        </p>
+
+        <div id="message"></div>
+
+    </div>
+
+</div>
+
+<script src="js/register.js"></script>
+
+</body>
+</html>

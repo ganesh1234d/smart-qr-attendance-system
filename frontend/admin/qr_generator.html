@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generate QR</title>
+
+    <link rel="stylesheet" href="/css/admin.css">
+
+    <style>
+
+        .qr-container{
+
+            text-align:center;
+
+            margin-top:30px;
+
+        }
+
+        #qrcode{
+
+            display:inline-block;
+
+            margin:20px auto;
+
+            padding:20px;
+
+            background:white;
+
+            border-radius:12px;
+
+            box-shadow:0 4px 12px rgba(0,0,0,.1);
+
+        }
+
+        .session-info{
+
+            margin-top:15px;
+
+            color:#555;
+
+            font-size:14px;
+
+        }
+
+        button{
+
+            padding:12px 24px;
+
+            font-size:16px;
+
+            border:none;
+
+            border-radius:8px;
+
+            background:#27ae60;
+
+            color:white;
+
+            cursor:pointer;
+
+        }
+
+        button:hover{
+
+            background:#1f8a4d;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="qr-container">
+
+    <h1>Generate Today's Attendance QR</h1>
+
+    <button id="generateBtn">
+
+        🔄 Generate New QR for Today
+
+    </button>
+
+    <div id="qrcode"></div>
+
+    <p class="session-info" id="sessionInfo"></p>
+
+    <br>
+
+    <button onclick="window.location.href='/admin/dashboard-page'">
+
+        ← Back to Dashboard
+
+    </button>
+
+</div>
+
+
+<script src="/js/qr.js"></script>
+
+</body>
+</html>

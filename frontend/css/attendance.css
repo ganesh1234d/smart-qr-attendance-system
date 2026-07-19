@@ -1,0 +1,139 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:#f4f8fb;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+}
+
+.container{
+
+    width:420px;
+
+    background:#ffffff;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+    padding:30px;
+
+    text-align:center;
+}
+
+h1{
+
+    color:#0d6efd;
+
+    margin-bottom:10px;
+
+    font-size:28px;
+}
+
+h2{
+
+    margin-bottom:25px;
+
+    color:#333;
+}
+
+.attendance-card{
+
+    background:#eef6ff;
+
+    border-radius:10px;
+
+    padding:20px;
+
+    margin-bottom:25px;
+
+    border:1px solid #cfe2ff;
+}
+
+.attendance-card h3{
+
+    color:#0d6efd;
+
+    margin-bottom:15px;
+}
+
+#status{
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#d9534f;
+}
+
+#swipeButton{
+
+    width:100%;
+
+    padding:16px;
+
+    font-size:20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:#0d6efd;
+
+    color:white;
+
+    transition:0.3s;
+}
+
+#swipeButton:hover{
+
+    background:#0b5ed7;
+}
+
+.note{
+
+    margin-top:30px;
+
+    text-align:left;
+
+    background:#fff8e5;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    border:1px solid #ffe58a;
+}
+
+.note h3{
+
+    margin-bottom:10px;
+
+    color:#ff9800;
+}
+
+.note ul{
+
+    padding-left:20px;
+}
+
+.note li{
+
+    margin-bottom:10px;
+
+    color:#444;
+}

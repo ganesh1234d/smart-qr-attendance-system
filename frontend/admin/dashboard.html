@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>SMART QR ATTENDANCE</h1>
+
+        <h2>Welcome Admin</h2>
+
+        <div class="card">
+
+            <div class="box">
+
+                <h3>Total Students</h3>
+
+                <p id="totalStudents">0</p>
+
+            </div>
+
+            <div class="box">
+
+                <h3>Today's Attendance</h3>
+
+                <p id="todayAttendance">0</p>
+
+            </div>
+
+            <div class="box">
+
+                <h3>Absent Students</h3>
+
+                <p id="absentStudents">0</p>
+
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <button onclick="window.location.href='/admin/students-page'">
+
+                📋 Students
+
+            </button>
+
+            <button onclick="window.location.href='/admin/live-attendance-page'">
+
+                📍 Live Attendance
+
+            </button>
+
+            <button onclick="reports()">
+
+                📊 Reports
+
+            </button>
+
+
+            </button>
+
+            <button onclick="window.location.href='/admin/qr-generator-page'">
+
+                🔲 Generate QR
+
+            </button>
+
+            <button onclick="logout()">
+
+                🚪 Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+<script src="../js/admin.js"></script>
+
+</body>
+
+</html>
