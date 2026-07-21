@@ -1,5 +1,7 @@
 from openpyxl import Workbook
-from fastapi.responses import FileResponse
+from io import BytesIO
+from fastapi.responses import StreamingResponse
+
 import os
 
 import uuid
@@ -13,6 +15,8 @@ from app.models import QRSession
 from app.database import get_db
 from app.models import User, Student, Attendance
 from app.routers.student import get_current_user
+
+
 
 router = APIRouter(
     prefix="/admin",
@@ -330,6 +334,7 @@ def export_excel(
 
         selected_date = date.today()
 
+    # Create workbook
     workbook = Workbook()
 
     sheet = workbook.active
@@ -353,18 +358,36 @@ def export_excel(
     for student in students:
 
         status = "Absent"
+
         time = "-"
 
         for record in attendance:
 
+            # Handle date/datetime safely
+            attendance_date = record.attendance_date
+
+            if isinstance(attendance_date, datetime):
+
+                attendance_date_only = attendance_date.date()
+
+            else:
+
+                attendance_date_only = attendance_date
+
             if (
                 record.student_id == student.student_id
-                and record.attendance_date.date() == selected_date
+                and attendance_date_only == selected_date
             ):
 
                 status = "Present"
 
-                time = record.attendance_date.strftime("%I:%M %p")
+                if isinstance(attendance_date, datetime):
+
+                    time = attendance_date.strftime("%I:%M %p")
+
+                else:
+
+                    time = "-"
 
                 break
 
@@ -384,17 +407,26 @@ def export_excel(
 
         ])
 
+    # Save Excel file in memory
+    output = BytesIO()
+
+    workbook.save(output)
+
+    output.seek(0)
+
     filename = "Attendance_Report.xlsx"
 
-    workbook.save(filename)
+    return StreamingResponse(
 
-    return FileResponse(
+        output,
 
-        path=filename,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 
-        filename=filename,
+        headers={
 
-        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            "Content-Disposition": f"attachment; filename={filename}"
+
+        }
 
     )
 

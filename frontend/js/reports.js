@@ -238,7 +238,7 @@ function exportExcel() {
         document.getElementById("reportDate").value;
 
     let url =
-    "http://127.0.0.1:8000/admin/export-excel";
+       "https://smart-qr-attendance-system.onrender.com/admin/export-excel";   
 
     if (selectedDate !== "") {
 
