@@ -8,7 +8,7 @@ from app.models import User, Student
 from app.schemas import UserRegister, UserLogin
 from app.models import Attendance
 from app.schemas import AttendanceRequest
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from app.auth import (
     hash_password,
     verify_password,
@@ -350,7 +350,7 @@ def mark_attendance(
 
         student_id=student.student_id,
 
-        attendance_date=datetime.utcnow(),
+        attendance_date=datetime.utcnow() + timedelta(hours=5, minutes=30),
 
         status="Present",
 
